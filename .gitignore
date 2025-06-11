@@ -1,0 +1,17 @@
+# Node + Vite
+frontend/node_modules/
+frontend/dist/
+
+# Python + Django
+backend/__pycache__/
+backend/db.sqlite3
+backend/env/
+backend/venv/
+
+# System
+.DS_Store
+.env
+*.pyc
+*.log
+
+uplyft-chatbot/venv/
