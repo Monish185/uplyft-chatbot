@@ -1,3 +1,5 @@
+"""Configuration for the products Django app."""
+
 from django.apps import AppConfig
 
 
