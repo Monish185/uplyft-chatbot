@@ -28,8 +28,10 @@ PRODUCT_DATA = {
 }
 
 def generate_product():
-    category = random.choice(list(PRODUCT_DATA.keys()))
-    brand = random.choice(list(PRODUCT_DATA[category].keys()))
+    # random.choice can directly work with dictionary view objects (like .keys()) in Python 3,
+    # so explicitly converting to a list is not necessary and can be simplified.
+    category = random.choice(tuple(PRODUCT_DATA.keys()))
+    brand = random.choice(tuple(PRODUCT_DATA[category].keys()))
     model = random.choice(PRODUCT_DATA[category][brand])
     name = f"{brand} {model}"
 
@@ -41,7 +43,10 @@ def generate_product():
     
     min_price, max_price = price_ranges[category]
     price = round(random.uniform(min_price, max_price), 2)
+    
+    # This conditional expression is already quite concise, no change needed.
     stock = random.randint(5 if price > 50000 else 10, 50)
+    
     rating = round(random.uniform(3.5, 5.0), 1)  # Most products have good ratings
 
     return Product(
