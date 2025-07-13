@@ -1,12 +1,13 @@
 import os
-import django
 import random
 from decimal import Decimal
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
-django.setup()
+import django
 
 from products.models import Product
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
+django.setup()
 
 # Product data organized by brand and type
 PRODUCT_DATA = {
