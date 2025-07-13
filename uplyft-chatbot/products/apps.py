@@ -1,3 +1,4 @@
+"""Configuration for the products application."""
 from django.apps import AppConfig
 
 
